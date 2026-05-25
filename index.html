@@ -52,15 +52,19 @@
 
     <!-- ════════════ GİRİŞ EŞİĞİ — KAPAK (kodeks bunun ardında, görünmeden kurulur) ════════════ -->
     <div id="cover-gate" class="cover-gate" role="dialog" aria-modal="true" aria-label="Fabl — kapak">
-        <picture>
-            <source srcset="assets/cover.webp" type="image/webp" />
-            <img class="cover-gate__art" src="assets/cover.jpg"
-                 width="1054" height="1492"
-                 alt="Fabl — Küçük Masallar. Kitabın kapağı: gün doğumunda dağda bir şato, altın bir ağaç işlemeli kitap, taç ve kılıç."
-                 decoding="async" fetchpriority="high" />
-        </picture>
-        <button id="cover-open" class="cover-gate__open" type="button">Kitabı Aç</button>
-        <p class="cover-gate__hint" aria-hidden="true">Okumak için dokun</p>
+        <button id="cover-open" class="book3d" type="button" aria-label="Fabl — kitabı aç">
+            <picture>
+                <source srcset="assets/cover.webp" type="image/webp" />
+                <img class="book3d__cover" src="assets/cover.jpg"
+                     width="1054" height="1492"
+                     alt="Fabl — Küçük Masallar. Kitabın kapağı: gün doğumunda dağda bir şato, altın bir ağaç işlemeli kitap, taç ve kılıç."
+                     decoding="async" fetchpriority="high" />
+            </picture>
+            <span class="book3d__spine" aria-hidden="true"></span>
+            <span class="book3d__ribbon" aria-hidden="true"></span>
+            <span class="book3d__peel" aria-hidden="true"></span>
+        </button>
+        <p class="cover-gate__cue" aria-hidden="true">kapağı arala</p>
     </div>
     <script>
         (function () {

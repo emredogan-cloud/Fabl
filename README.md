@@ -18,15 +18,17 @@ Motor, **Tuzun Hafızası** dijital kodeksinden devralınmıştır; biçim disip
   - **II · Birlikte** — birlikte yaşamak
   - **III · Yapmak ve Bırakmak** — el, ustalık, vazgeçiş
 - **Ölçek:** Her fabl ~500–900 kelime (2–3 sayfa)
-- **Şu anki üretim:** 3 fabl yazıldı (her kümeden bir tane)
+- **Şu anki üretim:** 15 fabl yazıldı — Defter I (3) + Defter II (12); her kümede 5 fabl
 
-### Yazılan fabller
+### Yazılan fabller (15)
 
-| # | Fabl | Küme | Çekirdek |
-|---|------|------|----------|
-| I | Yankıyı Besleyen Çoban | Kendilik | Sevdiğimiz yoldaş bazen yalnızca kendi sesimizdir |
-| II | İki Saatin Kasabası | Birlikte | Uzlaşma, haklı çıkmak değil bir paya razı olmaktır |
-| III | Düğümü Çözmeyen Denizci | Yapmak ve Bırakmak | Ustalık, neyi olduğu gibi bırakacağını bilmektir |
+**I · Kendilik:** Yankıyı Besleyen Çoban · Kendi İzini Kovalayan Tilki · Adını Unutan Nehir · Aynadaki Tavus · Rüzgârın Borcu
+
+**II · Birlikte:** İki Saatin Kasabası · Terazinin İki Gözü · Borç Veren Mum · Çatlaktaki Tohum · Konuşan Kavak ile Sessiz Çınar
+
+**III · Yapmak ve Bırakmak:** Düğümü Çözmeyen Denizci · Arının Tereddüdü · Heykeltıraşın Fazlası · Haritada Olmayan Patika · Saatçinin Kuşu
+
+Defter II üretim raporu: `FABL-DEFTER2-REPORT-TR.md`
 
 ---
 
@@ -37,9 +39,7 @@ Fabl/
 ├── index.html                — Dijital kitap arayüzü
 ├── content/
 │   ├── novel-data.js         — Kitap meta'sı, üç küme tanımı
-│   ├── fable-01.js           — Yankıyı Besleyen Çoban
-│   ├── fable-02.js           — İki Saatin Kasabası
-│   ├── fable-03.js           — Düğümü Çözmeyen Denizci
+│   ├── fable-01.js … fable-15.js — 15 fabl (küme sırasına dizilir: 5 + 5 + 5)
 │   └── finalize.js           — Küme sıralayıcı
 ├── scripts/
 │   ├── storage.js            — LocalStorage (ilerleme, izler, tema)

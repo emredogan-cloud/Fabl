@@ -7,13 +7,24 @@
     <meta name="theme-color" content="#0e161d" />
     <title>Fabl · Küçük Masallar</title>
 
+    <!-- Kitap kimliği / paylaşım görseli (yayın alan adı belli olunca mutlak URL'ye çevrilebilir) -->
+    <meta property="og:type" content="book" />
+    <meta property="og:title" content="Fabl · Küçük Masallar" />
+    <meta property="og:description" content="Bağımsız okunabilen kısa fabller derlemesi. Küçük hikâyeler, açık bir çekirdek, sakin bir ton." />
+    <meta property="og:image" content="assets/cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:wght@400;500&family=Inter:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet" />
 
+    <!-- Kapak görselini erkenden getir (eşik hızlı boyansın) -->
+    <link rel="preload" as="image" href="assets/cover.webp" type="image/webp" fetchpriority="high" />
+
     <link rel="stylesheet" href="styles/themes.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/animations.css" />
+    <link rel="stylesheet" href="styles/cover.css" />
 
     <!-- Düşük güç modu tespiti — ilk boyamadan önce uygulanır. -->
     <script>
@@ -38,6 +49,45 @@
     </script>
 </head>
 <body class="is-loading" data-theme="sabah">
+
+    <!-- ════════════ GİRİŞ EŞİĞİ — KAPAK (kodeks bunun ardında, görünmeden kurulur) ════════════ -->
+    <div id="cover-gate" class="cover-gate" role="dialog" aria-modal="true" aria-label="Fabl — kapak">
+        <picture>
+            <source srcset="assets/cover.webp" type="image/webp" />
+            <img class="cover-gate__art" src="assets/cover.jpg"
+                 width="1054" height="1492"
+                 alt="Fabl — Küçük Masallar. Kitabın kapağı: gün doğumunda dağda bir şato, altın bir ağaç işlemeli kitap, taç ve kılıç."
+                 decoding="async" fetchpriority="high" />
+        </picture>
+        <button id="cover-open" class="cover-gate__open" type="button">Kitabı Aç</button>
+        <p class="cover-gate__hint" aria-hidden="true">Okumak için dokun</p>
+    </div>
+    <script>
+        (function () {
+            var b = document.body,
+                gate = document.getElementById('cover-gate'),
+                openBtn = document.getElementById('cover-open');
+            var navKeys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'PageUp', 'PageDown',
+                           'Home', 'End', ' ', 'f', 'F', 'k', 'K', 'i', 'I', 'İ', 't', 'T', 'y', 'Y', 'p', 'P'];
+            function enter() {
+                if (b.classList.contains('is-entered')) return;
+                b.classList.add('is-entered');
+                var book = document.getElementById('book');
+                if (book) { try { book.focus({ preventScroll: true }); } catch (e) {} }
+                // Geçiş bitince eşiği erişilebilirlik ağacından çıkar
+                setTimeout(function () { if (gate) gate.setAttribute('aria-hidden', 'true'); }, 650);
+            }
+            if (openBtn) openBtn.addEventListener('click', function (e) { e.stopPropagation(); enter(); });
+            if (gate) gate.addEventListener('click', enter);   // kapağa dokunmak da açar
+            // Eşik açıkken, kodeksin klavye gezinmesini perde arkasında dondur
+            document.addEventListener('keydown', function (e) {
+                if (b.classList.contains('is-entered')) return;
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); enter(); return; }
+                if (navKeys.indexOf(e.key) !== -1) { e.stopPropagation(); }
+            }, true);
+            try { if (openBtn) openBtn.focus({ preventScroll: true }); } catch (e) {}
+        })();
+    </script>
 
     <!-- ════════════ AÇILIŞ — SABAH ════════════ -->
     <div id="loader" class="loader" aria-hidden="true">

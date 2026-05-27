@@ -55,8 +55,8 @@ window.FABL.book = {
     series: "İlk Defter · Birinci Derleme",
     edition: "İlk Tab' · MMXXVI",
     epigraph: "“Her küçük hikâye de bir şey bilir; yeter ki acele edilmesin.”",
-    backText: "Bu defterde üç fabl var; her biri kendi başına okunabilir. Sonraki defteri dolduracak masallar henüz yolda.",
-    epilogueText: "Burada ilk defter kapanır. Anlatılan üç hikâye de küçüktü; ama küçük olan, çoğu zaman akılda en uzun kalandır. Okur kitabı kapatınca fabller bitmez — yalnızca sırasını okura bırakır.",
+    backText: "Bu defterdeki fabller birbirinden bağımsız okunabilir; her biri kendi başına tamamdır. Derleme acele etmeden büyüyor — yeni masallar hep yolda.",
+    epilogueText: "Burada defter şimdilik kapanır. Anlatılan hikâyelerin hepsi küçüktü; ama küçük olan, çoğu zaman akılda en uzun kalandır. Okur kitabı kapatınca fabller bitmez — yalnızca sırasını okura bırakır.",
     colophon: "Cormorant Garamond, EB Garamond ve Marcellus harfleriyle dizildi. Küçük masallar için kısa bir kodeks. Bir ders dayatmaz; bir gözlem bırakır."
 };
 
